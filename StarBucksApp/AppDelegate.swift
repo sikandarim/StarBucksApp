@@ -93,22 +93,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                let orderVC = OrderViewController()
                let giftVC = GiftViewController()
                let storeVC = StoreViewController()
-               
+        
+               let homeNC = makeNavigationController(rootViewController: homeVC)
                let scanNC = UINavigationController(rootViewController: scanVC)
                let orderNC = UINavigationController(rootViewController: orderVC)
                let giftNC = UINavigationController(rootViewController: giftVC)
                let storeNC = UINavigationController(rootViewController: storeVC)
 
                let tabBarController = UITabBarController()
-               tabBarController.viewControllers = [homeVC, scanNC, orderNC, giftNC, storeNC]
+               tabBarController.viewControllers = [homeNC, scanNC, orderNC, giftNC, storeNC]
                
                window?.rootViewController = tabBarController
                
-        tabBarController.tabBar.tintColor = .brown
+               tabBarController.tabBar.tintColor = .brown
                tabBarController.tabBar.isTranslucent = false
 
        
         return true
+    }
+    
+    func makeNavigationController(rootViewController: UIViewController) -> UINavigationController {
+        let navigationController = UINavigationController(rootViewController: rootViewController)
+        navigationController.navigationBar.prefersLargeTitles = true
+        
+        let attrs = [
+            NSAttributedString.Key.foregroundColor: UIColor.label,
+            NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .title1).bold()
+
+        ]
+        navigationController.navigationBar.largeTitleTextAttributes = attrs
+        return navigationController
     }
     
 
