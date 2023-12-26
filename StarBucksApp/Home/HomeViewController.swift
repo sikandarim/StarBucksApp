@@ -20,11 +20,16 @@ class HomeViewController: StarBucksViewController {
 
     
     let tiles = [
-        TileViewController(),
-        PlaceholderViewController("star balancing"),
-        PlaceholderViewController("Bouns stars"),
-        PlaceholderViewController("Try these"),
-        PlaceholderViewController("welcome back"),
+                
+                TileViewController(title: "Breakfast made meatless",
+                                   subtitle: "Try the Beyond Meat, Cheddar & Egg Breakfast Sandwich. Vegetarian and protein-packed.",
+                                   imageName: "meatless"),
+                TileViewController(title: "Uplifting our communities",
+                                   subtitle: "Thanks to our partners' nominations, The Starbucks Foundation is donating $145K to more than 50 local charities.",
+                                   imageName: "communities"),
+                TileViewController(title: "Spend at least $15 for 50 Bonus Stars",
+                                   subtitle: "Collect 50 Bonus Stars when you spend at least $15 pre-tax.",
+                                   imageName: "bonus"),
     ]
     
     override func viewDidLoad() {
@@ -50,7 +55,6 @@ extension HomeViewController {
     func style() {
       
         headerView.translatesAutoresizingMaskIntoConstraints = false
-        headerView.backgroundColor = .blue
         
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         stackView.translatesAutoresizingMaskIntoConstraints = false
