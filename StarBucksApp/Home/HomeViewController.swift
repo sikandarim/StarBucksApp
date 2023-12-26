@@ -20,10 +20,11 @@ class HomeViewController: StarBucksViewController {
 
     
     let tiles = [
-        TileView("star balancing"),
-        TileView("Bouns stars"),
-        TileView("Try these"),
-        TileView("welcome back"),
+        TileViewController(),
+        PlaceholderViewController("star balancing"),
+        PlaceholderViewController("Bouns stars"),
+        PlaceholderViewController("Try these"),
+        PlaceholderViewController("welcome back"),
     ]
     
     override func viewDidLoad() {
